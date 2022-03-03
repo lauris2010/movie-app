@@ -1,0 +1,104 @@
+.banner {
+    display: flex;
+    object-fit: contain;
+    max-width: 100%;
+    height: 80vh;
+    background-size: cover;
+    background-position: top;
+}
+
+@media (min-width: 1000px){
+    .banner-contents {
+        margin-left: 60px;
+        padding-top: 160px;
+    }
+}    
+
+@media (min-width: 800px){
+    .banner-contents {
+        padding-top: 170px;
+    }
+}
+
+@media (min-width: 600px){
+    .banner-contents {
+        margin-left: 4em;
+        padding-top: 16em;
+        margin-right: 3em;
+    }
+}
+
+@media (min-width: 1000px){
+    .banner-title {
+        font-size: 4rem;
+        padding-bottom: 0.2em;
+        line-height: 1.25em;
+    }
+}
+
+@media (min-width: 600px){
+    .banner-title {
+        font-size: 3.5rem;
+        padding-bottom: 0.3em;
+    }
+}
+
+@media (min-width: 1000px){
+    .banner-button {
+        padding: 0.85em 1.7em;
+        font-size: 1.1rem;
+    }
+}
+
+@media (min-width: 600px){
+    .banner-button {
+        padding: 0.85em 1.5em;
+    }
+}
+
+.banner-button {
+    cursor: pointer;
+    font-size: 18px;
+    color: #e5e5e5;
+    outline: none;
+    border: none;
+    font-weight: 700;
+    border-radius: 5px;
+    padding: 0.8em 1.4em;
+    background-color: rgba(51,51,51,.7);
+    margin-bottom: 0.85em;
+}
+
+@media (min-width: 1000px){
+    .banner__overview {
+        min-width: 30em;
+        max-width: 35em;
+    }
+}
+
+@media (min-width: 600px){
+    .banner__overview {
+        min-width: 25em;
+        max-width: 30em;
+        font-size: 1.1rem;
+    }
+}
+
+.banner__overview {
+    min-width: 16em;
+    padding-top: 1em;
+    line-height: 1.3;
+    font-size: 18px;
+    font-weight: 600;
+    height: 8em;
+}
+
+.banner-button:hover {  
+        color: rgb(255, 116, 118);
+        transform: scale(1.1, 1.1);
+        transition: 0.3s ease-in-out;
+}
+
+a{
+    padding: 10px 10px 10px 10px;
+}
