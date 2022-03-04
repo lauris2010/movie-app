@@ -1,0 +1,22 @@
+@media (min-width: 800px) { 
+    .social {
+        margin: 6em 0 3em;
+    }
+}
+
+.social {
+    margin: 4em 0 2em;
+    display: flex;
+    justify-content: center;
+}
+
+svg.MuiSvgIcon-root:hover {
+    color: rgb(255, 116, 118);
+    transform: translateY(-4px);
+    transition: 0.3s ease-in-out;
+}
+
+a {
+    padding: 10px 10px 10px 10px;
+    color: rgba(216, 208, 208, 0.534);
+}
