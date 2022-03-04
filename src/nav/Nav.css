@@ -1,0 +1,77 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 2.5rem;
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    background: rgba(75, 73, 73, 0.089);
+    height: 60px;
+  }
+
+  .navbar-sticky {
+    background: #333;
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-shadow: 1px 1px 1px #222;
+    animation: moveDown 0.5s ease-in-out;
+  }
+  
+  .navbar--link {
+    display: flex;
+    list-style: none;
+  }
+  
+  .navbar--link-item {
+    margin: 0.4rem 1rem 0 0;
+    padding: 0 0.3rem;
+    cursor: pointer;
+  }
+  
+  @keyframes moveDown {
+    from {
+      transform: translateY(-5rem);
+    }
+    to {
+      transform: translateY(0rem);
+    }
+  }
+  
+  @keyframes rotate {
+    0% {
+      transform: rotateY(360deg);
+    }
+    100% {
+      transform: rotateY(0rem);
+    }
+  }
+  
+  .input {
+    display: flex;
+    box-sizing: border-box;
+    margin-right: 60px;
+    border-radius: 5px;
+    background-color: transparent;
+    border: 2px solid hsla(0,0%,89.8%,.384);
+    outline: none;
+    max-width: 250px;
+    height: 35px;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAACDElEQVRIie2UPWsUURSGn3NnBDfGzpjZ2Q2kUPEjAYWAjTaJpLRQwcLKIoUGBP9A6lgLIWIfBSvZUlYxVsIGhESwzs6ZCdFOshaTnWPhLIRkZ3fUNm81lzP3fd77deBYQyRFhXa7XfE8b8HM7gGXgNNmpiLSFJEXYRhu/DOg3W5fd869ASYK5hmwkiTJ05mZmXQQwBWYfwAmROSziNwxszOdTuekc24KWAZ+AYthGK6ZWeEu9EteUdVtVbUoilbNzOv3XxRFV1X1h6qaqj4uvQLP8xZ6yWu12qKIdPtNqtfrX4CH+XDJzPxSgPxAAZ4VmfdUq9UaIrIJjKvqzVIA4DJAlmXrg8wPBFoHEJErZQGnANI03SsDAH7mgNFSADOLASqVyrky7mZ2If/UUgAReQ/Q7XYfDDNPkmRMROaBDPhYFrDKn0f0RFWvDUguWZY9B0aBRhiG26UA+fNfAUaAd6p6u1/yOI5fA/dz2HKROfRpFa1W60QQBK9E5G6+qs38tuwB54F58suQ66vnebNBEOyWAuSpJI7jR8ASMH6onAGNPPlLEZkaBBnYR8zMj6LohnNuGhgRkQj41NvznZ2ds/v7+00RmTKzLd/35w5DyjeqAiVJMmZmTTObBr6laTo7OTmZ9OpHuunfqlqtfnfO3TKzLeCi7/tvD9b/GwAQBMGu7/tzwMawHnasI/oNiCzaePuMuZoAAAAASUVORK5CYII=);
+    background-position: 100%;
+    background-repeat: no-repeat;
+    transition: width .4s ease-in-out;
+    color: #e5e5e5;
+    background-position-x: 95%;
+  }
+  
+  @media (min-width: 1000px){
+    .input {
+        width: 14em;
+        padding: 1.2em 0.6em;
+        font-size: 1rem;
+    }
+  }
+  
+  

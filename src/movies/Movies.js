@@ -146,27 +146,6 @@ const Movies = () => {
             })
           }
         </div>
-        <h1 className='row__title'>Horror Movies</h1>
-        <div className='row__posters'>
-          {
-            horrorMovies.slice(0, 15).map((movie, index) => {
-              return (
-                <>
-                  <div class="row__movie">
-                      <a href="#">
-                        <img 
-                        key={index}
-                          src={`${process.env.REACT_APP_IMAGE_URL}${movie.poster_path}`} 
-                          alt={movie.title} 
-                          className="row__poster"
-                        />
-                      </a>
-                  </div>
-                </>
-              )
-            })
-          }
-        </div>
       </div>
   )
 };
