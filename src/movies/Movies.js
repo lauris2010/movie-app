@@ -10,6 +10,7 @@ const Movies = () => {
   const [topRatedMovies, setTopRatedMovies] = React.useState([])
   const [comedyMovies, setComedyMovies] = React.useState([])
   const [horrorMovies, setHorrorMovies] = React.useState([])
+  const [documentaryMovies, setDocumentaryMovies] = React.useState([])
 
 
   React.useEffect(() => {
@@ -44,6 +45,12 @@ const Movies = () => {
         setComedyMovies(comedyListData?.results);
       }
     }
+    const getDocumentaryList = async () => {
+      const documentaryData = await modules.getDocumentaries();
+      if (documentaryData?.results) {
+        setDocumentaryMovies(documentaryData?.results);
+      }
+    }
 
     const getHorrorMovies = async () => {
       const horrorMoviesData = await modules.getHorror();
@@ -57,6 +64,7 @@ const Movies = () => {
     getTopRated();
     getComedyList();
     getHorrorMovies();
+    getDocumentaryList();
 
   }, []);
   
@@ -132,6 +140,30 @@ const Movies = () => {
               return (
                 <>
                   <div className="row__movie">
+                      <Link to={`details/${movie?.id}`}>
+                      <a href="#">
+                        <img 
+                          key={index}
+                          src={`${process.env.REACT_APP_IMAGE_URL}${movie.poster_path}`} 
+                          alt={movie.title} 
+                          className="row__poster"
+                          />
+                      </a>
+                      </Link>
+                  </div>
+                </>
+              )
+            })
+          }
+        </div>
+        <h1 className='row__title'>documentary</h1>
+        <div className='row__posters'>
+          {
+            documentaryMovies.slice(0, 15).map((movie, index) => {
+              return (
+                <>
+                  <div className="row__movie">
+                    <Link to={`details/${movie?.id}`}>
                       <a href="#">
                         <img 
                           key={index}
@@ -140,6 +172,7 @@ const Movies = () => {
                           className="row__poster"
                         />
                       </a>
+                      </Link>
                   </div>
                 </>
               )

@@ -7,9 +7,14 @@ import Similar from './Similar';
 const Details = ({ params:  {id}  }) => {
   const [movie, setMovie] = React.useState({})
   const [similar, setSimilar] = React.useState({})
+  const [trailer, setTrailer] = React.useState({})
   const modules = useModules()
 
   const genres = movie.genres
+  // const trailerResults = trailer.results
+  console.log(trailer.results)
+  // const trailerKey = `https://youtu.be/${trailerResults.key}`
+  // console.log(trailerKey)
 
   let time= movie.runtime
   const hours = Math.floor(time /60)
@@ -29,8 +34,18 @@ const Details = ({ params:  {id}  }) => {
         setSimilar(similarMovies)
       }
     }
+    const getMovieTrailer = async () => {
+      const movieTrailer = await modules.getTrailer(id)
+      if (movieTrailer){
+        setTrailer(movieTrailer.results[0])
+
+      }
+    }
+
+
     getSimilarMovies()
     getMovieDetails()
+    getMovieTrailer()
   }, [id])
   return (
     <div className='movieDetails'>
@@ -69,7 +84,9 @@ const Details = ({ params:  {id}  }) => {
                         }
                     </div>
                       <div className="movieDetails__buttonDiv">
-                        <button className="trailer__button movieDetails__button">Play Trailer</button>
+                        <a href={`https://youtu.be/${trailer.key}`}>
+                        <button className="trailer__button movieDetails__button" >Play Trailer</button>
+                        </a>
                       </div>
                       <div>
                         <p className='movieDetails__overview'>{movie.overview}</p>

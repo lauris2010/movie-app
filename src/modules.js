@@ -56,6 +56,11 @@ const useModules = () => {
     const getHorror = async () => {
         const horror = await api.get(`/discover/movie?api_key=${process.env.REACT_APP_API_KEY}&with_genres=${genres.Horror}`)
         return horror?.data
+    
+    }
+    const getDocumentaries = async () => {
+        const documentary = await api.get(`/discover/movie?api_key=${process.env.REACT_APP_API_KEY}&with_genres=${genres.Documentary}`)
+        return documentary?.data
     }
 
     const getUpcoming = async () => {
@@ -78,16 +83,24 @@ const useModules = () => {
         return search?.data
     }
 
+    const getTrailer = async (id) => {
+        const trailer = await api.get(`https://api.themoviedb.org/3/movie/${id}/videos?api_key=${process.env.REACT_APP_API_KEY}&language=en-U`)
+        return trailer?.data
+
+    }
+
     const modules = {
         getTrending,
         getPopular,
         getTopRated,
         getComedyList,
         getHorror,
+        getDocumentaries,
         getUpcoming,
         getMoviesByID,
         getSimilarMovies,
         getSearch,
+        getTrailer,
     }
 
     return modules
