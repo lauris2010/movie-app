@@ -70,7 +70,7 @@ const Details = ({ params:  {id}  }) => {
                     <h1 className='movieDetails__title'>{movie.original_title}
                       <span>({movie.release_date.slice(0, -6)})</span>
                       <p className='movieDetails__runtime'>{hours}h {minutes}min</p>
-                      <p className='movieDetails__imdb'>IMDB: {movie.vote_average}</p>
+                      <p className='movieDetails__imdb'>IMDB: {Math.floor(movie.vote_average * 10)/10}</p>
                     </h1>
                     <div className='movieDetails__genres'>
                         {

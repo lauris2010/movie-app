@@ -9,9 +9,21 @@ import { useLocation } from 'react-router-dom'
 import { useNavigate } from "react-router-dom";
 
 const Nav = ({ sticky }) => {
+
+  const data = [{id: 0, label: "Istanbul, TR (AHL)"}, {id: 1, label: "Paris, FR (CDG)"}];
+
   const location = useLocation();
   const navigate = useNavigate();
   const { state, dispatch } = React.useContext(Store);
+  const [isOpen, setOpen] = React.useState(false);
+  const [items, setItem] = React.useState(data);
+  const [selectedItem, setSelectedItem] = React.useState(null);
+
+  const toggleDropdown = () => setOpen(!isOpen);
+
+  const handleItemClick = (id) => {
+    selectedItem === id ? setSelectedItem(null) : setSelectedItem(id);
+  }
 
   const setSearch = (e) => {    
     if (e.target.value && !location.pathname.includes('search')) {
